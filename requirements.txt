@@ -1,0 +1,5 @@
+pelican
+markdown
+pelican-gist
+pelican-youtube
+pelican-vimeo

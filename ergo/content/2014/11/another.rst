@@ -1,6 +1,4 @@
-We've Got Code!
-###############
-
+:title: We've Got Code!!
 :date: 2010-10-03 10:20
 :modified: 2010-10-04 18:40
 :tags: python, flask
@@ -8,6 +6,8 @@ We've Got Code!
 :slug: my-super-post-another
 :authors: Alexis Metaireau, Conan Doyle
 :summary: Short version for index and feeds
+:series: MetaFlask
+
 
 This is a quick bit of text.
 

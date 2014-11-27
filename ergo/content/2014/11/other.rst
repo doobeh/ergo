@@ -1,6 +1,4 @@
-Test Gist Embeds
-################
-
+:title: Test Gist Embeds
 :date: 2010-10-03 10:20
 :modified: 2010-10-04 18:40
 :tags: python, flask

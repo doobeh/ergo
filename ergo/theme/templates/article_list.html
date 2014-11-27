@@ -1,33 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-    {% if articles %}
-        {% for article in (articles_page.object_list if articles_page else articles) %}
-            <article>
-                <h4><a href="{{ SITEURL }}/{{ article.url }}"
-                       rel="bookmark"
-                       title="Permalink to {{ article.title|striptags }}">
-                        {{ article.title }}
-                    </a></h4>
-					{{ article.content }}
-                    <p><bd>Created {{ article.locale_date }}
-                    {%- if article.tags %}, Tagged
-        <bd>
-{% for tag in article.tags %}
-	<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-    {% if not loop.last %}
-        /
-    {% endif %}
+{% if articles %}
+{% for article in (articles_page.object_list if articles_page else articles) %}
+<article>
+    <h4><a href="{{ SITEURL }}/{{ article.url }}"
+           rel="bookmark"
+           title="Permalink to {{ article.title|striptags }}">
+        {{ article.title }}
+    </a></h4>
+    {{ article.content }}
+    <p>
+        <bd>Created {{ article.locale_date }}
+            {%- if article.tags %}, Tagged
+
+                {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                {% if not loop.last %}
+                /
+                {% endif %}
+                {% endfor %}
+
+            {% endif %}
+        </bd>
+    </p>
+
+
+</article>
+<hr/>
 {% endfor %}
-           </bd>
 {% endif %}
 
-                    </p>
-
-
-            </article>
-            <hr/>
-        {% endfor %}
-    {% endif %}
-
-    {% include 'includes/pagination.html' %}
+{% include 'includes/pagination.html' %}
 {% endblock content %}

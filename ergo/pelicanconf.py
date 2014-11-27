@@ -9,7 +9,7 @@ SITEURL = ''
 PATH = 'content'
 
 TIMEZONE = 'Europe/Paris'
-
+PLUGIN_PATHS = ['plugins']
 DEFAULT_LANG = u'en'
 THEME = r'theme'
 # Feed generation is usually not desired when developing
@@ -26,9 +26,9 @@ USE_PAGER = True
 
 PLUGINS = [
     'pelican_gist',
-    'pelican-youtube',
-    'pelican-vimeo',
-
+    'pelican_youtube',
+    'pelican_vimeo',
+    'series'
 ]
 
 # Blogroll

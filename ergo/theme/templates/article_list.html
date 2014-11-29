@@ -12,6 +12,13 @@
                            title="Permalink to {{ article.title|striptags }}">
                         {{ article.title }}
                     </a></h4>
+                    {% if article.series %}
+                    <div class="callout callout-info">
+                        <p class="">
+                            This post is part {{ article.series.index }} of the <a href="#series-info">{{ article.series.name|capitalize }} series</a>
+                        </p>
+                    </div>
+                    {% endif %}
                     {{ article.content }}
                     <p>
                         <bd>Created {{ article.locale_date }}

@@ -46,7 +46,7 @@ By building up many stories that cover the gamut of your
 users interactions on your site, we can use these tests to tell
 us when our site is functionally complete.
 
-For many new developers, it sounds slow, but as you get more experienced
+For many new developers, TDD sounds slow, but as you get more experienced
 you'll find that spending the time upfront to build these TDD stories
 lets you get a more complete picture of what you're developing and
 you will find that you end up saving a great deal of time.

@@ -15,7 +15,7 @@
                     {% if article.series %}
                     <div class="callout callout-info">
                         <p class="">
-                            This post is part {{ article.series.index }} of the <a href="#series-info">{{ article.series.name|capitalize }} series</a>
+                            This post is part {{ article.series.index }} of the <a href="{{ SITEURL }}/{{ article.url }}#series-info">{{ article.series.name|capitalize }} series</a>
                         </p>
                     </div>
                     {% endif %}

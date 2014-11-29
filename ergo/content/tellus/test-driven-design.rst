@@ -53,7 +53,7 @@ you will find that you end up saving a great deal of time.
 
 Here's a rough example of the first few parts of the story.  Don't try
 and run it just yet, this is just the code that handles our story, there's
-more code required to get the test suite running with out application.
+more code required to get the test suite running with our application.
 
 .. code-block:: python
 

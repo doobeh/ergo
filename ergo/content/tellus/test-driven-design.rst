@@ -17,13 +17,13 @@ I like to think of TDD as story-telling.  We put ourselves into a users
 shoes and then walk through the site, at each step of the journey we
 test to see if that step was successful.
 
-A simple story for a user could be "Jane wants to log in
+A simple story for a user could be "Alice wants to log in
 to the site to update the occupation on her profile
 page" so lets break that down:
 
-#. Jane goes to the homepage of our site
+#. Alice goes to the homepage of our site
 #. She clicks on the 'Sign In' link.
-#. She enters her username and password, and clicks the 'Sign In' button to submit the form.
+#. She enters her username and password, and submits the form.
 #. The site logs her in and returns her to the homepage.
 #. She clicks on her name that is now shown on the navigation bar and chooses 'Manage' from the drop-down menu.
 #. She edits her occupation in her user details and clicks 'Save'
@@ -50,3 +50,29 @@ For many new developers, it sounds slow, but as you get more experienced
 you'll find that spending the time upfront to build these TDD stories
 lets you get a more complete picture of what you're developing and
 you will find that you end up saving a great deal of time.
+
+Here's a rough example of the first few parts of the story.  Don't try
+and run it just yet, this is just the code that handles our story, there's
+more code required to get the test suite running with out application.
+
+.. code-block:: python
+
+        def test_profile_update(self):
+            # Alice goes to the homepage of our site:
+            self.browser.get(app.config["SITE_DEBUG"])
+            self.assertIn('REF:HOME', self.browser.page_source)
+
+            # She clicks on the 'Sign In' link:
+            self.browser.find_element_by_id('signin').click()
+            self.assertIn('REF:SIGNIN', self.browser.page_source)
+
+            # She enters her username and password, and submits the form.:
+            self.browser.find_element_by_id('email').send_keys('email@example.com')
+            self.browser.find_element_by_id('password').send_keys('password')
+            self.browser.find_element_by_id('submit').click()
+
+            # The site logs her in and returns her to the homepage.
+            self.assertIn('REF:HOME', self.browser.page_source)
+            self.assertIn('Alice', self.browser.page_source)
+
+            # Etc.

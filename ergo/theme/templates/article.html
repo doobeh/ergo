@@ -38,7 +38,7 @@
 {% endblock %}
 
 {% block content %}
-	<div id="">
+	<div id="white">
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -51,14 +51,11 @@
                     </a></h4>
 
                     {% if article.series %}
-                        <p>This post is part {{ article.series.index }} of the "{{ article.series.name }}" series:</p>
-                        <ol class="parts">
-                            {% for part_article in article.series.all %}
-                                <li {% if part_article == article %}class="active"{% endif %}>
-                                    <a href='{{ SITEURL }}/{{ part_article.url }}'>{{ part_article.title }}</a>
-                                </li>
-                            {% endfor %}
-                        </ol>
+                    <div class="callout callout-info">
+                        <p class="">
+                            This post is part {{ article.series.index }} of the <a href="#series-info">{{ article.series.name|capitalize }} series</a>
+                        </p>
+                    </div>
                     {% endif %}
 
 					{{ article.content }}
@@ -78,6 +75,8 @@
                         </bd>
                     </p>
 
+
+
                     {# <p><ba><a href="{{ SITEURL }}/{{ article.author.url }}"> {{ article.author }}</a></ba></p> #}
 
                     {# % include "includes/article_info.html" % #}
@@ -91,6 +90,22 @@
 	    </div> <!-- /container -->
 	</div><!-- /grey -->
 
+    <div id="grey">
+        <div class="container">
+            <div id="row">
+                {% if article.series %}
+                        <h4><a id="series-info">Series Information:</a></h4>
+                        <ol class="parts">
+                            {% for part_article in article.series.all %}
+                                <li {% if part_article == article %}class="active"{% endif %}>
+                                    <a href='{{ SITEURL }}/{{ part_article.url }}'>{{ part_article.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
+            </div>
+        </div>
+    </div>
 
 
 

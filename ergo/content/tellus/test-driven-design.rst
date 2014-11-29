@@ -59,7 +59,7 @@ more code required to get the test suite running with our application.
 
         def test_profile_update(self):
             # Alice goes to the homepage of our site:
-            self.browser.get(app.config["SITE_DEBUG"])
+            self.browser.get(app.config["SITE_URL"])
             self.assertIn('REF:HOME', self.browser.page_source)
 
             # She clicks on the 'Sign In' link:
@@ -76,3 +76,4 @@ more code required to get the test suite running with our application.
             self.assertIn('Alice', self.browser.page_source)
 
             # Etc.
+

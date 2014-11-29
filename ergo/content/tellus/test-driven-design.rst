@@ -10,7 +10,7 @@
 
 One of my goals of this project is to use test-driven design (TDD) to help
 shape the project, and set goals that take into account the end-users of
-the site..
+the site.
 
 I like to think of TDD as story-telling.  We put ourselves into a users
 shoes and then walk through the site, at each step of the journey we

@@ -50,6 +50,9 @@ you'll find that spending the time upfront to build these TDD stories
 lets you get a more complete picture of what you're developing and
 you will find that you end up saving a great deal of time.
 
+In a perfect world, you would only write code once you have a test written,
+the test would initially fail, and you'd keep on coding until it passes.
+
 Here's a rough example of the first few parts of the story.  Don't try
 and run it just yet, this is just the code that handles our story, there's
 more code required to get the test suite running with our application.

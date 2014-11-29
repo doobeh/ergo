@@ -35,9 +35,10 @@ The Tellus Project
 
 I'm going to work towards building a site that essentially clones the functionality
 of `MetaFilter`_.  If the site is new to you, visit it, click around
-and get a feel for it.
+and get a feel for it.  If you've used sites like StackOverflow or Quora, you'll
+be generally familiar with the functionality I'm looking to build.
 
-MetaFilter is a good goal because it's a relatively simple site graphically,
+MetaFilter is a particularly good goal because it's a relatively simple site graphically,
 it doesn't make heavy use of jQuery, so lets us focus more on the Python
 side of the equation and less on the interface.
 

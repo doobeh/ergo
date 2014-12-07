@@ -3,3 +3,5 @@ markdown
 pelican-gist
 pelican-youtube
 pelican-vimeo
+pillow
+beautifulsoup4

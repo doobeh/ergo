@@ -23,12 +23,16 @@ SOCIAL = False
 HIDE_SIDEBAR = True
 PYGMENTS_STYLE = 'murphy'
 USE_PAGER = True
+RESPONSIVE_IMAGES = True
+
+STATIC_PATHS = ["images", ]
 
 PLUGINS = [
     'pelican_gist',
     'pelican_youtube',
     'pelican_vimeo',
-    'series'
+    'series',
+    'better_figures_and_images',
 ]
 
 # Blogroll

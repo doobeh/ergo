@@ -32,7 +32,7 @@ PLUGINS = [
     'pelican_youtube',
     'pelican_vimeo',
     'series',
-    'better_figures_and_images',
+    # 'better_figures_and_images',
 ]
 
 # Blogroll

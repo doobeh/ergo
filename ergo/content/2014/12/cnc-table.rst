@@ -75,3 +75,23 @@ But rather then trying to decode that with our minds, we can get the simulator t
 show us the output.
 
 .. image:: /images/cnc/chair-simulation.gif
+
+Cutting and Building
+--------------------
+
+The next stage is committing that design to wood-- I loaded the plywood into the machine,
+loaded the G-code and set my origin point (the 'bottom-left' of the plywood) and zeroed
+the machine to the table-top of the CNC bed.  A lot of people use the top of the material
+as the Z depth zero, but while I'm learning, it reduces less chance of plunging into the
+bed material.
+
+.. image:: https://farm8.staticflickr.com/7468/15350672144_dfe779b45d_z.jpg
+    :width: 240px
+    :height: 320px
+    :alt: Dowel joined chair
+
+.. image:: https://farm9.staticflickr.com/8637/15970961231_f409404e34_z.jpg
+    :width: 240px
+    :height: 320px
+    :alt: Clamped
+

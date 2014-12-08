@@ -6,7 +6,7 @@
 :slug: first-cnc-chair
 :authors: Anthony Plunkett
 :summary: Planning and building a chair on my CNC machine.
-:status: draft
+:status: published
 
 One of my major projects over the last couple of years is to very slowly
 fabricate and build a decent sized CNC machine.  It's functionally complete
@@ -49,7 +49,7 @@ efficient layouts.
 The Tool Paths
 --------------
 
-Next is to generate the toolpaths that the machine will cut-- essentially building
+Next is to generate the toolpaths that the machine will cut— essentially building
 a text file that tells the machine what coordinates to move to, and how deep to cut.
 The end code looks like::
 
@@ -79,11 +79,12 @@ show us the output.
 Cutting and Building
 --------------------
 
-The next stage is committing that design to wood-- I loaded the plywood into the machine,
+The next stage is committing that design to wood— I loaded the plywood into the machine,
 loaded the G-code and set my origin point (the 'bottom-left' of the plywood) and zeroed
 the machine to the table-top of the CNC bed.  A lot of people use the top of the material
 as the Z depth zero, but while I'm learning, it reduces less chance of plunging into the
-bed material.
+bed material and means I don't have to adjust the G-code to take into account the actual
+depth of the plywood— wood is rarely the size it's sold at.
 
 .. image:: https://farm8.staticflickr.com/7468/15350672144_dfe779b45d_z.jpg
     :width: 240px
@@ -94,4 +95,18 @@ bed material.
     :width: 240px
     :height: 320px
     :alt: Clamped
+
+A couple of mistakes were had— I don't have a good cable management system installed yet,
+and while it was finishing the cuts and getting ready to do the dowel holes, the machine
+caught up on one of the motor cables, which caused it to judder— I think that threw off
+the machine a little and the dowel holes ended up being offset a little.  When I clamp it,
+it looks a lot better, because the error occurred after most the outlines were cut.
+
+Next time I'll be sure to fix the cabling management and use a more accurate dimension of
+3/4" plywood— this one actually measured 0.56" which ends up making the chair less stable
+and overall have a smaller finished width.
+
+But, as a start— it's a good one.  Looking forward to changing the chair design slightly
+to improve it's strength characteristics and maybe increase the side of the back of the
+chair a little.
 

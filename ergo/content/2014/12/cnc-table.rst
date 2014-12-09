@@ -1,6 +1,6 @@
 :title: CNC Table
 :date: 2014-12-03 20:51
-:modified: 2014-12-03 20:51
+:modified: 2014-12-08 20:12
 :tags: cnc
 :category: cnc
 :slug: first-cnc-chair
@@ -29,7 +29,7 @@ I'm looking to build:
 The full chair outline will get cut four times out of 0.75" ply, so 3" and
 the other shape, the seat and back, will be cut twenty times, giving the chair
 a final width of 18".  The points along the middle of the outlines indicate
-where I'll get the machine to drill a whole, which will allow me to
+where I'll get the machine to drill a hole, which will allow me to
 align the parts easily once cut by passing a 1/4" dowel through the holes.
 
 The Layout

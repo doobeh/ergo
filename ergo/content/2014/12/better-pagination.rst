@@ -8,6 +8,8 @@
 :summary: Using macros to deploy pagination quicker
 :status: published
 
+.. highlight:: python
+
 After starting a new project that involved long lists of products,
 I inevitable turned to pagination to help manage the user interface
 and then I was reminded about how much boilerplate code is required
@@ -15,7 +17,9 @@ on each template to get it working.
 
 The Flask-SQLAlchemy includes a helpful pagination class utility
 that integrates easily into a standard ORM query— here's a simple
-example::
+example:
+
+.. code-block:: python
 
     @app.route('/shop/department/<name>/')
     @app.route('/shop/department/<name>/pg<int:page>')
@@ -34,7 +38,9 @@ it finds out what department the user is looking at, then returns
 the products within that department as a pagination object.
 
 In your Jinja template, you then access the properties of the pagination
-object to build your user interface.  Normally that looks something like::
+object to build your user interface.  Normally that looks something like:
+
+.. code-block:: python
 
     {# Display product data #}
     {% for product in products.items %}
@@ -66,8 +72,10 @@ A Better Way™
 -------------
 
 Instead, we can lean on the information we already have to make some intelligent
-choices on how we wish to generate our pagination.  Here is the macro that will
-handle it, for every page that is reusuable::
+choices on how we wish to generate our pagination.  Here is our macro that will
+handle it generically:
+
+.. code-block:: jinja
 
     {% macro paginate(paginator) %}
         {# A generally pluggable pagination macro, just supply it with the pagination object #}
@@ -97,7 +105,9 @@ handle it, for every page that is reusuable::
     {% endmacro %}
 
 Now when you want pagination in your template, just do the following (assuming the above
-code is saved in a file called '_helpers.html'::
+code is saved in a file called '_helpers.html':
+
+.. code-block:: jinja
 
     import '_helpers.html' as helpers
 
@@ -105,7 +115,7 @@ code is saved in a file called '_helpers.html'::
         <p>{{ product.description</p>
     {% endfor %}
 
-    {{ paginate(products) }}
+    {{ helpers.paginate(products) }}
 
 And it's good.  The important thing is does is to grab the current endpoint that is being
 accessed from `request.endpoint` and then the arguments that were used to generate the
@@ -115,12 +125,16 @@ the `do` function.
 
 The `do` function is part of a built-in, but not enabled Jinja extension, it executes
 the commands without doing printing out any returned values.  You'll need to
-register it against your Flask application by doing the following::
+register it against your Flask application by doing the following:
+
+.. code-block:: python
 
     app.jinja_env.add_extension('jinja2.ext.do')
 
 Now we have the `endpoint`, and the cleaned `view_args` which we can use in tandem with
-the pagination object to generate our pagination url's::
+the pagination object to generate our pagination url's:
+
+.. code-block:: jinja
 
     {{ url_for(request.endpoint, page=paginator.next_num, **view_args) }}
 

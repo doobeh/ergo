@@ -1,9 +1,9 @@
-:title: CNC Table
+:title: CNC Chair
 :date: 2014-12-03 20:51
 :modified: 2014-12-08 20:12
 :tags: cnc
 :category: cnc
-:slug: first-cnc-table
+:slug: first-cnc-chair
 :authors: Anthony Plunkett
 :summary: Planning and building a chair on my CNC machine.
 :status: published

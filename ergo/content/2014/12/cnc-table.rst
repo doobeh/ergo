@@ -25,6 +25,7 @@ The first step is to layout the parts you wish to create, here's the chair
 I'm looking to build:
 
 .. image:: /images/cnc/chair_outline.gif
+   :alt: Chair Outlines
 
 The full chair outline will get cut four times out of 0.75" ply, so 3" and
 the other shape, the seat and back, will be cut twenty times, giving the chair
@@ -40,6 +41,7 @@ of wood-- luckily that's a fairly routine procedure which most CAD tools
 include. Here's an example sheet:
 
 .. image:: /images/cnc/sheet_layout.gif
+   :alt: Sheet Layout
 
 I've chosen to be a bit cautious in the layout, leaving 1" of gap between each
 part and the edge of the wood.  As I get more confident and understand the
@@ -75,6 +77,7 @@ But rather then trying to decode that with our minds, we can get the simulator t
 show us the output.
 
 .. image:: /images/cnc/chair-simulation.gif
+   :alt: Simulation
 
 Cutting and Building
 --------------------

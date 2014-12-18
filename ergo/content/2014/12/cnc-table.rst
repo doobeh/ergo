@@ -24,8 +24,8 @@ The Sketch
 The first step is to layout the parts you wish to create, here's the chair
 I'm looking to build:
 
-.. image:: /images/cnc/chair_outline.gif
-   :alt: Chair Outlines
+..  image:: /images/cnc/chair_outline.gif
+    :alt: Chair Outlines
 
 The full chair outline will get cut four times out of 0.75" ply, so 3" and
 the other shape, the seat and back, will be cut twenty times, giving the chair
@@ -40,8 +40,8 @@ The next step is to lay out the parts in an efficient way to reduce wastage
 of wood-- luckily that's a fairly routine procedure which most CAD tools
 include. Here's an example sheet:
 
-.. image:: /images/cnc/sheet_layout.gif
-   :alt: Sheet Layout
+..  image:: /images/cnc/sheet_layout.gif
+    :alt: Sheet Layout
 
 I've chosen to be a bit cautious in the layout, leaving 1" of gap between each
 part and the edge of the wood.  As I get more confident and understand the
@@ -76,8 +76,8 @@ telling the machine to ramp down into the first cut.
 But rather then trying to decode that with our minds, we can get the simulator to
 show us the output.
 
-.. image:: /images/cnc/chair-simulation.gif
-   :alt: Simulation
+..  image:: /images/cnc/chair-simulation.gif
+    :alt: Simulation
 
 Cutting and Building
 --------------------
@@ -89,12 +89,12 @@ as the Z depth zero, but while I'm learning, it reduces less chance of plunging 
 bed material and means I don't have to adjust the G-code to take into account the actual
 depth of the plywood— wood is rarely the size it's sold at.
 
-.. image:: https://farm8.staticflickr.com/7468/15350672144_dfe779b45d_z.jpg
+..  image:: https://farm8.staticflickr.com/7468/15350672144_dfe779b45d_z.jpg
     :width: 240px
     :height: 320px
     :alt: Dowel joined chair
 
-.. image:: https://farm9.staticflickr.com/8637/15970961231_f409404e34_z.jpg
+..  image:: https://farm9.staticflickr.com/8637/15970961231_f409404e34_z.jpg
     :width: 240px
     :height: 320px
     :alt: Clamped

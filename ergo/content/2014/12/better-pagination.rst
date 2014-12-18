@@ -8,8 +8,6 @@
 :summary: Using macros to deploy pagination quicker
 :status: published
 
-.. highlight:: python
-
 After starting a new project that involved long lists of products,
 I inevitable turned to pagination to help manage the user interface
 and then I was reminded about how much boilerplate code is required

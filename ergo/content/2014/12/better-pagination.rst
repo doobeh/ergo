@@ -38,7 +38,7 @@ the products within that department as a pagination object.
 In your Jinja template, you then access the properties of the pagination
 object to build your user interface.  Normally that looks something like:
 
-.. code-block:: python
+.. code-block:: html+jinja
 
     {# Display product data #}
     {% for product in products.items %}
@@ -73,7 +73,7 @@ Instead, we can lean on the information we already have to make some intelligent
 choices on how we wish to generate our pagination.  Here is our macro that will
 handle it generically:
 
-.. code-block:: jinja
+.. code-block:: html+jinja
 
     {% macro paginate(paginator) %}
         {# A generally pluggable pagination macro, just supply it with the pagination object #}
@@ -105,7 +105,7 @@ handle it generically:
 Now when you want pagination in your template, just do the following (assuming the above
 code is saved in a file called '_helpers.html':
 
-.. code-block:: jinja
+.. code-block:: html+jinja
 
     import '_helpers.html' as helpers
 

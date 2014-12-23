@@ -110,7 +110,7 @@ code is saved in a file called '_helpers.html':
     {% import '_helpers.html' as helpers %}
 
     {% for product in product.items %}
-        <p>{{ product.description</p>
+        <p>{{ product.description }}</p>
     {% endfor %}
 
     {{ helpers.paginate(products) }}

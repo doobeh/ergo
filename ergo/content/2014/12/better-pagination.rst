@@ -107,7 +107,7 @@ code is saved in a file called '_helpers.html':
 
 .. code-block:: html+jinja
 
-    import '_helpers.html' as helpers
+    {% import '_helpers.html' as helpers %}
 
     {% for product in product.items %}
         <p>{{ product.description</p>

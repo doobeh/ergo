@@ -171,11 +171,36 @@ a database.  So what a M2M relationship actually looks like is::
     | Book |1---M| book_category |M---1| Category |
     --------     -----------------     ------------
 
-I've always called the middle table a 'join table' but in SQLAlchemy parlance it's referred to
+In SQLAlchemy parlance it's referred to
 as an association table.  It's job is to manage the associations between the Book and Category
 tables.  If we delved into the `book_category` table we would see just two columns: `book_id`
-and `category_id`.
+and `category_id` (remember, the 'many' side of a relation gets the foreign-key references).
 
 Because this is a very common database pattern, SQLAlchemy uses some magic that allows us
 to talk directly between Book and Category, under the surface SQLAlchemy is managing that
 `book_category` table for us.
+
+Sometimes you wish to hold some information within that association table, perhaps if you
+had a M2M relationship between student and exams, you might want to include their grade
+in the association table, in that case you want SQLAlchemy to define it as an association
+*object* and *not* a association table.  In short, association tables are transparent
+to you, whereas association objects have data of their own which you access.
+
+For now, we'll build an association table, as we're not storing extra data within it and
+are only concerned about the `Book` and `Category` endpoints.  Add thek
+
+.. code-block:: python
+
+    categories = db.Table('categories',
+        db.Column('category_id', db.Integer, db.ForeignKey('category.id')),
+        db.Column('book_id', db.Integer, db.ForeignKey('book.id'))
+    )
+
+    class Category(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        name = db.Column(db.Text)
+        books = db.relationship('Book', secondary=categories,
+                                backref=db.backref('categories', lazy='dynamic'))
+        def __repr__(self):
+            return '<Category:{}>'.format(self.name)
+

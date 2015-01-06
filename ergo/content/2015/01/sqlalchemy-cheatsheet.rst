@@ -181,10 +181,11 @@ references).
 
 Because this is a very common database pattern, SQLAlchemy uses some magic that
 allows us to talk directly between `Book` and `Category` objects, under the
-surface SQLAlchemy is managing that `book_category` table for us.
+surface SQLAlchemy will manage that `book_category` table for us.
 
 Sometimes you wish to hold some information within that association table, perhaps if you
-had a M2M relationship between student and exams, you might want to include their grade
+had a M2M relationship between student and exams, you might want to include their grade or
+date they took the exam
 in the association table, in that case you want SQLAlchemy to define it as an association
 *object* and *not* a association table.  In short, association tables are transparent
 to you, whereas association objects have data of their own which you access.
@@ -246,7 +247,7 @@ That's not the best example, so lets do something a little more useful.
 Querying Over Multiple Relations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We now have an `Author` who has written many `Book`s, each of which can belong to multiple
+We now have an author who was written many books each of which can belong to multiple
 categories.  We have one relationship tying the `Author` to the `Book` class, and another
 tying the `Book` to the `Category` class.
 
@@ -275,14 +276,16 @@ filter to those which contain Science Fiction.
 
 Next lets approach from the opposite side, we want to find out which categories
 Carol has published within.  We're no longer able to use the 'contains' method because
-we're querying from the many to one side of the book relationship to author.
+we're querying from the many to one side of the relationship between `Book` and `Author`.
 
 To put it another way, the `contains` clause would essentially ask
 "Out of the list of authors on this book, is one of them Carol?" which would raise
-an error, because `contains` is expecting a list and would only get a single value,
-a scalar because we've defined 'A `Book` can only have a single `Author`'.
+an error, because `contains` is expecting a list and would only get a single value
+(what we refer to as a scalar) because we've defined 'A `Book` can only have a single
+`Author`' when we built our relationship.
 
-Because we're dealing with a scalar value, we would just use a simple `==` comparison:
+Because we're dealing with a scalar value on Author,
+we could just use a simple `==` comparison:
 
 .. code-block:: python
 

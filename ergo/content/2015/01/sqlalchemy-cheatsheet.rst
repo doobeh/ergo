@@ -6,7 +6,7 @@
 :slug: sqlalchemy-cheatsheet
 :authors: Anthony Plunkett
 :summary: SQLAlchemy ORM Reference
-:status: draft
+:status: published
 
 SQLAlchemy is largely magic, you ask it to do things, and it just works.
 This is especially true when dealing with 'simple' relationships, e.g.

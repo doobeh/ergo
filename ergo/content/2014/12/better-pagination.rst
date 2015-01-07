@@ -1,4 +1,4 @@
-:title: Better Pagination
+:title: Better Pagination with Jinja and SQLAlchemy
 :date: 2014-12-17 13:26
 :modified: 2014-12-17 13:26
 :tags: flask, python, jinja

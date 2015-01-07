@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Anthony Plunkett'
 SITENAME = u'ergo.io'
-SITEURL = ''
+SITEURL = 'http://ergo.io'
 
 PATH = 'content'
 

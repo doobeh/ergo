@@ -1,5 +1,6 @@
 :title: Test Driven Design
 :date: 2014-11-28 20:46
+:modified: 2014-01-08 21:54
 :series: tellus
 :series_index: 4
 :tags: python, flask
@@ -52,6 +53,9 @@ you will find that you end up saving a great deal of time.
 
 In a perfect world, you would only write code once you have a test written,
 the test would initially fail, and you'd keep on coding until it passes.
+I'm personally not that strict, there's a lot of boilerplate involved in
+any web-app, and I'd rather get the foundations in, then build the stories
+to refine the application to my needs.
 
 Here's a rough example of the first few parts of the story.  Don't try
 and run it just yet, this is just the code that handles our story, there's

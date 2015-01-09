@@ -1,9 +1,9 @@
-:title: SQLAlchemy Cheat Sheet
+:title: SQLAlchemy Relationships from Beginner to Advanced
 :date: 2015-01-05 20:26
 :date: 2015-01-05 20:26
 :tags: flask, python, jinja, sqlalchemy
 :category: flask
-:slug: sqlalchemy-cheatsheet
+:slug: sqlalchemy-relations-from-start-to-end
 :authors: Anthony Plunkett
 :summary: SQLAlchemy ORM Reference
 :status: published
@@ -295,6 +295,7 @@ we could just use a simple `==` comparison:
     # [<Category:Classic>, <Category:Science Fiction>]
 
 
-Here is the complete code for you to run and experiment with:
+Below is the complete code for you to run and experiment with.  If you have any
+queries that you think would be a good addition to this article, drop me a note.
 
 [gist:id=574fc95caee4c22f21ed]

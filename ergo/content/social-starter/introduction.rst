@@ -21,45 +21,33 @@ While the `Zen of Python`_ says:
     -- Zen of Python
 
 
-That's not true, at all, with micro-frameworks— the beauty of Flask is
-that it provides you with perfectly formed lego blocks
+That's not true, at all. The beauty of Flask (and other micro-frameworks) are
+that they provide you with perfectly formed lego blocks
 with which to build your project— you can use those block to build anything
 from a simple drafty shack to an ornate cathedral.  If you prefer a more
 structured approach, frameworks like Django provide a more complete story
 from which to build.
 
-The Tellus Project
-------------------
+The Starter Project
+-------------------
 
-I'm going to work towards building a site that essentially clones the functionality
-of `MetaFilter`_.  If the site is new to you, visit it, click around
-and get a feel for it.  If you've used sites like StackOverflow or Quora, you'll
-be generally familiar with the functionality I'm looking to build.
+We're going to be working towards building a social site that allows users to post
+new content and comment on those posts.  Think of a light version of Reddit, or Quora.
 
-MetaFilter is a particularly good goal because it's a relatively simple site graphically,
-it doesn't make heavy use of jQuery, so lets us focus more on the Python
-side of the equation and less on the interface.
-
-The site is a good representation of a lot of popular web applications, it has:
+To get up and running quickly, we'll focus on the core functionality, then build outwards
+to add some of the more fancy useful features in.
+At the end of the project, we'll have a site that has the following features:
 
 -   **Users**— Who can sign in to access features and manage their account settings.
 -   **Administrators**— A special class of user that can manage the site, removing posts, banning users, etc.
--   **Payment handling**— MetaFilter has a $5 joining fee to become a participating user.
 -   **Posts/Questions and Comments**— Users can create posts and comment on other users content.
 -   **Favourites/Flags**— Users have the ability to favourite posts, or flag them for administrative notice.
--   **Internal Messaging**— Users can privately message one another.
--   **Limits**— Users can only post one article a day, or ask one question a week and threads
-    are closed for more comments after set time periods.
 -   **Tags**— Articles are categorized and tagged.
 -   **Search**— The site can be searched.
 
-Think of any web-application and you'll find it has most of those features,
-so if you make it through this journal you should
-have a really solid foundation for approaching projects of your own.
-
-I tend to refer to this project as a journal, not a tutorial— I'm happy to
-make mistakes and ponder other approaches, I think that's an accurate
-reflection of real development.
+Think of any web-application and you'll find it has most of these features,
+so if you make it through this guide, you'll have a solid foundation for
+approaching projects of your own.
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/

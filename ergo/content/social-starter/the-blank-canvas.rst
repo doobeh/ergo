@@ -7,6 +7,7 @@
 :slug: the-blank-canvas
 :authors: Anthony Plunkett
 :summary: Starting the Project
+:status: draft
 
 The basic building blocks we need to create our project are simple:
 
@@ -16,7 +17,7 @@ Version 3.4.3 is best, but you can use 2.7.8 or similar.  To
 test, just go to your terminal (or command prompt for you Windows users)
 and type `Python`.
 
-In a perfect world you'll get something like::
+In a perfect world you'll get something like:
 
 .. code-block:: bash
 

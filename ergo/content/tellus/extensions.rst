@@ -7,6 +7,7 @@
 :slug: tellus-setup
 :authors: Anthony Plunkett
 :summary: Helpful Flask Extensions
+:status: draft
 
 Flask isn't just a project, it's an ecosystem.  You *can* choose to implement
 everything yourself, or you can sit back and realise that smarter people

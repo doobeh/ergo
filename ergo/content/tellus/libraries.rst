@@ -7,6 +7,7 @@
 :slug: tellus-libraries
 :authors: Anthony Plunkett
 :summary: Helpful Libraries
+:status: draft
 
 In addition to the Flask extensions we briefly went over, we're going to lean
 on some other great libraries to make our life even easier.

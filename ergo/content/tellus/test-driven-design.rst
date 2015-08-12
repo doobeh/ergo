@@ -8,6 +8,7 @@
 :slug: tellus-tdd
 :authors: Anthony Plunkett
 :summary: Test Driven Design
+:status: draft
 
 One of my goals of this project is to use test-driven design (TDD) to help
 shape the project, and set goals that take into account the end-users of

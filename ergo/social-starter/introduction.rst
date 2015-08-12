@@ -1,19 +1,16 @@
 :title: Introduction
 :date: 2014-11-27 18:00
-:series: tellus
+:series: starter
 :series_index: 1
 :tags: python, flask
-:category: tellus
-:slug: tellus-introduction
+:category: starter
+:slug: starter-introduction
 :authors: Anthony Plunkett
-:summary: Introduction to a Flask development journal.
-:status: draft
+:summary: Beginners Guide to Building a Social Web Application.
 
-This journal is about development of a social site using the Flask framework.
-This guide assumes a passing familiarity with Python
-and Flask, but ideally should be helpful to newcomers to the Flask framework
-that are looking to make the next step. If you think I can improve or expand
-on anything to make it clearer— please do let me know.
+This guide assumes you're a newcomer to Python and Flask.
+If you think I can improve or expand on anything to make
+it clearer— please do let me know.
 
 This guide is *not* the one-true guide on how to approach and complete a project.
 While the `Zen of Python`_ says:

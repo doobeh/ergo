@@ -14,7 +14,7 @@ Python 3.4.3 installed on your computer.
 
 Lets first create a directory called `starter` to house our new project.
 We'll also create a number of subdirectories and empty files which will
-act as the skeleton of our application
+act as the skeleton of our application.
 
 ..  image:: /images/starter/starter-directories.png
     :alt: Starter Skeleton

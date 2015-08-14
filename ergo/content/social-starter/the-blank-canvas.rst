@@ -57,3 +57,38 @@ for their future purpose:
 -   **templates**— Our templates live in this directory.  Templates are used
     by our views to render out complete webpages using the data the view grabs
     from the data-models.
+
+
+Virtual Environments
+====================
+
+We're going to want to play in our own private sandbox, called a virtual
+environment.  Essentially this lets us create a little world for our project
+to live in that can't be hurt by future projects we create.
+
+Open up a terminal and navigate to your `starter` directory then run:
+
+.. code-block:: bash
+
+    python -m venv world
+
+Python will create a folder called world that will have it's very own
+installation of Python.  We need to step into that world by activating
+it from our terminal/command line.
+For Windows users that means running the `activate.bat` file in
+the `world/Scripts` directory:
+
+.. code-block:: bash
+
+    world/scripts/activate.bat
+
+For everyone else, you'll do something like:
+
+.. code-block:: bash
+
+    . world/bin/activate
+
+In either case, you'll notice your command prompt changes to indicate
+that it's now standing within your virtual world.  If you open up
+a new terminal window, that window won't be in the virtual world— so
+you'll just need to remember to activate the world for it each time.

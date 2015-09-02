@@ -7,7 +7,7 @@
 :summary: Cheapest Color Laser Printer, TCO Win!
 :status: published
 
-This is a guide showing you how the `Dell C3765dnf`_ or `C3760dn`_
+This is a guide showing you how the `Dell C3765dnf`_ or `Dell C3760dn`_
 can be used to be give you the cheapest cost per page of any
 printer on the market.  It feels like a glitch in the system
 and it honestly fills me with joy when I covert people and businesses
@@ -25,7 +25,7 @@ on the mechanics (read on!).
 
 The short and long of it are that the `Dell C3765dnf`_ or if you don't
 require fax or scanning
-capabilities the `C3760dn`_ are the absolute best printers you can buy.
+capabilities the `Dell C3760dn`_ are the absolute best printers you can buy.
 
 The `Dell C3765dnf`_ is well priced if you can get it for under $600,
 if it's currently listed at more then that on Amazon (I've seen it as high
@@ -38,7 +38,7 @@ options.  The C3765dnf has them (the 'f' is the indicator) while the C3760
 is purely a color printer.
 
 Honestly, if you do require a great scanner, the best combination is
-to get the `Dell C3670dn`_ and a `Fujitsu SnapScan iX500`_ but for most
+to get the `Dell C3760dn`_ and a `Fujitsu SnapScan iX500`_ but for most
 small offices, there's definite benefits from having it all in a single
 unit, and that's why the `Dell C3765dnf`_ exists.
 
@@ -103,7 +103,7 @@ the serious question of "Should I run this printer into the ground, or should I 
 a new one?". The new one obviously comes with new imaging units ($149) and a fresh
 waste toner container ($25) and even low-capacity toner cartridges (estimate about $40).
 
-If you initially bought the `Dell C3765dnf`_ then I really recommend buying the `Dell C760dn`_
+If you initially bought the `Dell C3765dnf`_ then I really recommend buying the `Dell C3760dn`_
 as a backup/secondary printer-- as I mentioned above it's only $319 and comes with $214 worth
 of consumables, so it's a great time to pick up the extra capacity for only $100 real cost.
 

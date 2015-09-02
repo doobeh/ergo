@@ -2,6 +2,9 @@ body {
     padding-top: 0px;
 }
 
+.reference external {
+    font-weight: bold;
+}
 
 cite {
     padding: 0.2em 0.5em;

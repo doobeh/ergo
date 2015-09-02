@@ -107,9 +107,9 @@ If you initially bought the `Dell C3765dnf`_ then I really recommend buying the 
 as a backup/secondary printer-- as I mentioned above it's only $319 and comes with $214 worth
 of consumables, so it's a great time to pick up the extra capacity for only $100 real cost.
 
-_waste toner containers: http://amzn.to/1NWKPkO
-_here from dell: http://accessories.us.dell.com/sna/productdetail.aspx?c=us&l=en&s=dhs&cs=19&sku=331-8434
-_dell c3765dnf: http://amzn.to/1JAkaHj
-_dell c3760dn: http://amzn.to/1UlzzDB
-_fujitsu snapscan ix500: http://amzn.to/1Jx1x4Z
-_ld toner: http://amzn.to/1Jx1OVs
+.. _waste toner containers: http://amzn.to/1NWKPkO
+.. _here from dell: http://accessories.us.dell.com/sna/productdetail.aspx?c=us&l=en&s=dhs&cs=19&sku=331-8434
+.. _dell c3765dnf: http://amzn.to/1JAkaHj
+.. _dell c3760dn: http://amzn.to/1UlzzDB
+.. _fujitsu snapscan ix500: http://amzn.to/1Jx1x4Z
+.. _ld toner: http://amzn.to/1Jx1OVs

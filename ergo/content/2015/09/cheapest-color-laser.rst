@@ -38,7 +38,7 @@ options.  The C3765dnf has them (the 'f' is the indicator) while the C3760
 is purely a color printer.
 
 Honestly, if you do require a great scanner, the best combination is
-to get the `Dell C3670dn`_ and a `Fujitsu SnapScan iX500'_ but for most
+to get the `Dell C3670dn`_ and a `Fujitsu SnapScan iX500`_ but for most
 small offices, there's definite benefits from having it all in a single
 unit, and that's why the `Dell C3765dnf`_ exists.
 

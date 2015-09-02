@@ -27,11 +27,11 @@ The short and long of it are that the `Dell C3765dnf`_ or if you don't
 require fax or scanning
 capabilities the `C3760dn`_ are the absolute best printers you can buy.
 
-The `Dell C3765dnf` is well priced if you can get it for under $600,
+The `Dell C3765dnf`_ is well priced if you can get it for under $600,
 if it's currently listed at more then that on Amazon (I've seen it as high
 as $950) then just wait and you'll get a better deal in a week or two.
 
-The `Dell C3765dn` is usually around $350, at that price it almost feels
+The `Dell C3760dn`_ is usually around $350, at that price it almost feels
 like stealing.  Your cost for operation will very quickly pay back the
 upfront cost.  The difference between the two is solely in the scanner/print
 options.  The C3765dnf has them (the 'f' is the indicator) while the C3760
@@ -58,7 +58,7 @@ which in turns works out to be about 1.5c per colour page.
 We do a great deal of true full-color printing, and I estimate I can
 print at under 5c per page, which is pretty much unheard of.
 
-When you order a set of `LD Toner`_s from Amazon, they'll come with a
+When you order a set of `LD Toner`_ from Amazon, they'll come with a
 coupon code in the box.  If you then order directly from LD's website
 then you can save a further 5% or so.  If you don't need the toner
 urgently, then that's a good option.  I've had two bad instances when
@@ -103,7 +103,7 @@ the serious question of "Should I run this printer into the ground, or should I 
 a new one?". The new one obviously comes with new imaging units ($149) and a fresh
 waste toner container ($25) and even low-capacity toner cartridges (estimate about $40).
 
-If you initially bought the `Dell C3765dnf`_ then I really recommend buying the `Dell C760dn`
+If you initially bought the `Dell C3765dnf`_ then I really recommend buying the `Dell C760dn`_
 as a backup/secondary printer-- as I mentioned above it's only $319 and comes with $214 worth
 of consumables, so it's a great time to pick up the extra capacity for only $100 real cost.
 

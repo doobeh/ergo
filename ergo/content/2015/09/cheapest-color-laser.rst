@@ -1,7 +1,7 @@
 :title: Cheapest Colour Laser Printer
 :date: 2015-09-01 22:21
 :tags: dell, printer, tech, savings
-:category: flask
+:category: tech
 :slug: dell-c3765-cheapest-tco-printer
 :authors: Anthony Plunkett
 :summary: Cheapest Color Laser Printer, TCO Win!

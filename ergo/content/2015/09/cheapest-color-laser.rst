@@ -5,7 +5,7 @@
 :slug: dell-c3765-cheapest-tco-printer
 :authors: Anthony Plunkett
 :summary: Cheapest Color Laser Printer, TCO Win!
-:status: published
+:status: draft
 
 This is a guide showing you how the `Dell C3765dnf`_ or `Dell C3760dn`_
 can be used to be give you the cheapest cost per page of any

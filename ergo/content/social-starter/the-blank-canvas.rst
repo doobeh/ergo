@@ -7,7 +7,7 @@
 :slug: the-blank-canvas
 :authors: Anthony Plunkett
 :summary: Starting the Project
-
+:status: draft
 
 For the purposes of simplicity, I'm going to presume that you have
 Python 3.4.3 installed on your computer.

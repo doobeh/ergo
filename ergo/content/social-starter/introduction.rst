@@ -7,6 +7,7 @@
 :slug: starter-introduction
 :authors: Anthony Plunkett
 :summary: Beginners Guide to Building a Social Web Application.
+:status: draft
 
 This guide assumes you're a newcomer to Python and Flask.
 If you think I can improve or expand on anything to make

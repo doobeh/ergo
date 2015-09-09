@@ -75,14 +75,19 @@ belongs to a `Post` and a `User`.  At this stage in your app, you'd want to load
 dozens of Posts and perhaps hundreds of comments.  This is where `Mixer`_ can swoop in
 and help us out.
 
-Lets install it via `pip install mixer` and then use it to build:
+One note, the `nullable=False` is important, it's telling our database that we *need* data for that
+entry, and we'll complain if we don't get it.  If Mixer looks at a column where `nullable=True`
+(which is the default behaviour) then it will say "Pfft, I won't bother making data for that column
+because it's optional".
+
+Lets begin by installing it via `pip install mixer` and then use it to build:
 
 -   10 `Users`
 -   100 Posts (Each linked to a `User`)
 -   1000 Comments (Each linked to a `User` and `Post`)
 
-Sounds tricky, but we can do it in six lines of code, we can do it.  Lets just add the
-code below where we finished last time:
+Sounds tricky, but we can do it in six lines of code.  Lets just add the
+following code below to our program:
 
 .. code-block:: python
 

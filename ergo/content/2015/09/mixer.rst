@@ -120,13 +120,9 @@ our `username` needed a believable username and even that our `title` would
 need Title Casing.
 
 Because we have the relationships built, we could have asked Mixer to
-do all three steps by itself by just asking `comments = mixer.cycle(100).blend(Comment)`
-but we would have ended up with 200 `User` objects and 200 `Post` objects because it wouldn't
+do all three steps by itself by just asking `comments = mixer.cycle(1000).blend(Comment)`
+but we would have ended up with 2000 `User` objects and 1000 `Post` objects because it wouldn't
 have known to randomly select an existing entry from the database and so would
-have created a new `User` for each `Comment`.
-
-Full working example can be found below:
-
-[gist:id=6b375b107704da4030f7]
+have created a new `User` for each `Comment` *and* `Post`.
 
 .. _Mixer: https://mixer.readthedocs.org/en/latest/

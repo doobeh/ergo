@@ -70,7 +70,7 @@ and manually set up a `User`, `Post` and `Comment`.
         print(c.post.title) # Check out this gif!
 
 
-We've defined a `User` who can create many `Posts`s and many `Comment`s, each `Comment`
+We've defined a `User` who can create many `Post` objects and many `Comment` objects, each `Comment`
 belongs to a `Post` and a `User`.  At this stage in your app, you'd want to load several users,
 dozens of Posts and perhaps hundreds of comments.  This is where `Mixer`_ can swoop in
 and help us out.
@@ -116,7 +116,7 @@ need Title Casing.
 
 Because we have the relationships built, we could have asked Mixer to
 do all three steps by itself by just asking `comments = mixer.cycle(100).blend(Comment)`
-but we would have ended up with 200 `User`s and 200 `Post`s because it wouldn't
+but we would have ended up with 200 `User` objects and 200 `Post` objects because it wouldn't
 have known to randomly select an existing entry from the database and so would
 have created a new `User` for each `Comment`.
 

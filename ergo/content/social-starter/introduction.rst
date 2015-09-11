@@ -246,7 +246,73 @@ you'll just need to remember to activate the world each time you
 relaunch a terminal window.
 
 
+Installing Packages
+-------------------
 
+So lets do a quick recap— we've got Python and PostgreSQL installed
+and working. We've created out project skeleton and a virtual
+environment where we can play with it. Next we're going to load in
+the extensions and packages that will allow us to lean on the work
+of others.
+
+Open up `requirements.txt` in Sublime and add the following::
+
+    flask
+    flask-sqlalchemy
+    flask-security
+    flask-wtf
+    flask-script
+    flask-migrate
+    psycopg2
+    mixer
+    arrow
+
+Lets briefly go over what each package brings to the project:
+
+-   **Flask** is our scaffolding for our project which handles all the requests
+    for our application and routes them to the right places.
+-   **Flask-SQLAlchemy** handles our data-model layer for us, it is our messenger
+    to our database layer, handling a lot of the ugly, tedious work you might be used
+    to when dealing with SQL.  You'll no longer have to covert from SQL types
+    to Python types manually— SQLAlchemy will handle it all for us.  The
+    **Flask-SQLAlchemy** extension adds a few little helpers which make some
+    common tasks, like pagination really easy.
+-   **Psycopg2** is the translator for our PostgreSQL database.  It's the person
+    that SQLAlchemy needs to talk to, to send data to and from the database.
+-   **Flask-Security** user authentication is a big piece of the puzzle when dealing
+    with any modern web application.  **Flask-Security** makes it easy to ensure
+    that only the right people are able to see the information they need to.
+-   **Flask-WTF** handles our forms, it's a extension that builds on the great
+    `wtforms`_ package and allows us to simply handle form validation and creation.
+    It also works well with SQLAlchemy, allowing us to populate form elements
+    directly from the database quickly and easily.
+-   **Flask-Script** is our manager, we'll use it to carry out maintenance and
+    tests on our application.  Think of **Flask-Script** as the command-line for
+    your web-application.
+-   **Flask-Migrate** though we won't use it at the start, **Flask-Migrate** is
+    invaluable when you are knees deep in your project, it is an interface to
+    `Alembic`_ which helps manage changes within your database.  Think of it as
+    a version control for your database.
+-   **Mixer** is a great tool for generating data for your application.  Once
+    we've built up the model layer for our application, we'll use Mixer to populate
+    it with test data.
+-   **Arrow** is a Python library that gives you simple tools to manipulate and
+    format dates, it's invaluable when building user interfaces where you'd like to
+    say things like 'A few minutes ago'.
+
+To install our packages, go to the project root directory and make sure (as always)
+that you have activated the virtual environment.  Then simply do::
+
+    export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+    python3.4 -m pip install -r requirements.txt
+
+What we're doing is using the `pip` module that is now helpfully build into Python
+to install all the packages we listed in our `requirements.txt` file.  The first line
+lets pip know where we installed **Postgres.app** to.  If you're using a different
+PostgreSQL version, you'll need to point it at the right place.
+
+With a bit of luck, everything will install in a straightforward manner, and we can
+proceed to actually beginning on constructing the building blocks of our application.
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/
 .. _Digg: http://www.digg.com/

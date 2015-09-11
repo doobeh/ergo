@@ -354,6 +354,31 @@ the single connection indicates a **1** connections).
 ..  image:: /images/starter/starter-erd.png
     :alt: Starter ERD Sketch
 
+You'll see a few M2M relationships, including the self-referential one where
+users' are connect to themselves.  For each of these relationships we'll use
+a join table to enable them, then use the magic of SQLAlchemy to make the
+relationship seamless.
+
+Lets start by opening up `models.py` in our editor.
+
+.. code-block:: python
+
+    from flask_ext.sqlalchemy import SQLAlchemy
+
+    db = SQLAlchemy()
+
+    class User(db.Model):
+        id = db.Column(db.Integer(), primary_key=True)
+        username = db.Column(db.String(), indexed=True, nullable=False)
+        password = db.Column(db.String(), nullable=False)
+        email = db.Column(db.String(), nullable=False)
+        active = db.Column(db.Boolean(), default=False, nullable=False)
+
+        def __repr__(self):
+            return self.username
+
+
+
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/
 .. _Digg: http://www.digg.com/

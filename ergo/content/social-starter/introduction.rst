@@ -119,7 +119,7 @@ Testing Our Setup
 Lets test that we've got everything installed correctly and we are all on the same page.
 
 First open up a terminal window and type `Python3.4` and hit return.  If Python 3.4.3 is
-installed correctly you should see:
+installed correctly you should see::
 
     Python 3.4.3 (default, Aug 28 2015, 22:32:48)
     [GCC 4.2.1 Compatible Apple LLVM 6.1.0 (clang-602.0.53)] on darwin.

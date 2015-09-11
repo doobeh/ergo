@@ -142,6 +142,8 @@ Lets jump right in.  First we're going to need a place for our project to call h
 so lets launch a terminal and create a folder and jump into it.  If you want to create
 the folder in a different location, navigate there first.
 
+.. code-block:: bash
+
     mkdir starter
     cd starter
 
@@ -313,6 +315,25 @@ PostgreSQL version, you'll need to point it at the right place.
 
 With a bit of luck, everything will install in a straightforward manner, and we can
 proceed to actually beginning on constructing the building blocks of our application.
+
+The Data Model
+--------------
+
+What is a data model? We've talked about how web applications have core foundations
+that are common, User's, Posts, Comments and more.  The data-model is the representation
+of those elements.  The data-model for a car might be something like:
+
+Car Data Model
+~~~~~~~~~~~~~~
+
+-   **VIN Number**— a unique identifier for the car (never changes)
+-   **License Plate**— the current 'name' of the car (can change when it's resold).
+-   **Colour**
+-   **Brand**
+-   **TopSpeed**
+-   **LastServiceDate**— date when the car was last checked over my a mechanic
+
+
 
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/

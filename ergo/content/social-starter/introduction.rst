@@ -105,7 +105,7 @@ For OSX installing PostgreSQL is easy.  Just download `Postgres.app`_ and instal
 -   Move to `/Applications`
 -   Double-Click to launch the Server.
 
-For Windows users, it's just almost as straight-forward `from here <http://www.postgresql.org/download/windows/>`_.
+For Windows users, it's just almost as `straight-forward from here <http://www.postgresql.org/download/windows/>`_.
 
 A Development Environment
 =========================

@@ -90,7 +90,7 @@ Download and install it `from here <https://www.python.org/downloads/>`_.
 PostgreSQL
 ==========
 
-We're going to be storing our data for our application in PostgreSQL-- It's a fantastic
+We're going to be storing our data for our application in PostgreSQL— It's a fantastic
 database.  Often guides such as this one will just use SQLlite because it's built-in and
 a little quicker to get going. Forget that. If you're ever wanting to put your site into
 real production, you should be using the same database as you will when you go live.
@@ -132,7 +132,8 @@ to launch the psql terminal, and type in `select * from user;` and you should se
 yourself listed as the current user.
 
 If everything launched and worked great, then we are good to proceed.  If you ran into
-any problems, investigate why and get the problems resolved.
+any problems, investigate why and get the problems resolved, don't worry— we'll still
+be here when you get back.
 
 
 

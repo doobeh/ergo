@@ -324,7 +324,7 @@ that are common, User's, Posts, Comments and more.  The data-model is the repres
 of those elements.  The data-model for a car might be something like:
 
 Car Data Model
-~~~~~~~~~~~~~~
+==============
 
 -   **VIN Number**— a unique identifier for the car (never changes)
 -   **License Plate**— the current 'name' of the car (can change when it's resold).

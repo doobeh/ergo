@@ -139,7 +139,8 @@ Getting Started
 ===============
 
 Lets jump right in.  First we're going to need a place for our project to call home
-so lets launch a terminal and create a folder and jump into it::
+so lets launch a terminal and create a folder and jump into it.  If you want to create
+the folder in a different location, navigate there first.
 
     mkdir starter
     cd starter
@@ -150,13 +151,17 @@ it shortly::
     touch config.py
     touch requirements.txt
     touch manage.py
+
     mkdir app
     cd app
-    mkdir static
-    mkdir templates
+
     touch __init__.py
     touch models.py
     touch views.py
+
+    mkdir static
+    mkdir templates
+
 
 By the end of that you should end up with a project directory that looks like:
 
@@ -205,9 +210,6 @@ Throughout the project we'll be adding more files in as we need.  When I talk
 about adding a file to the project root, I mean adding them alongside the `requirements.txt`
 and `config.py` files.
 
-For now change back to the project root (`cd ..`).
-
-
 Virtual Environments
 --------------------
 
@@ -229,7 +231,6 @@ it from our terminal/command line:
 .. code-block:: bash
 
     . world/bin/activate
-
 
 For Windows users that means running the `activate.bat` file in
 the `world/Scripts` directory:

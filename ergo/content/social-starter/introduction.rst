@@ -135,7 +135,74 @@ If everything launched and worked great, then we are good to proceed.  If you ra
 any problems, investigate why and get the problems resolved, don't worry— we'll still
 be here when you get back.
 
+Getting Started
+===============
 
+Lets jump right in.  First we're going to need a place for our project to call home
+so lets launch a terminal and create a folder, jump into it, and then launch that
+folder as a project in sublime::
+
+    mkdir starter
+    cd starter
+
+We're going to quickly build the skeleton of our project in this folder, and populate
+it shortly::
+
+    touch config.py
+    touch requirements.txt
+    touch manage.py
+    mkdir app
+    cd app
+    mkdir static
+    mkdir templates
+    touch __init__.py
+    touch models.py
+    touch views.py
+
+By the end of that you should end up with a project directory that looks like:
+
+..  image:: /images/starter/starter-directories.png
+    :alt: Starter Skeleton
+
+Lets go over what we just created:
+
+Lets walk through the files we have just created to give you an overview
+for their future purpose:
+
+-   **requirements.txt**— Python lets us easily bring in packages that
+    other smart people have made, we'll use these to help us use our
+    database, or user-authentication, and many more features.  We can
+    list the names of the packages we need, and tell Python to install
+    them for us automatically.
+
+-   **manage.py**— We'll use this file to manage our application.  We'll
+    use it to run our development web-server, create our database and
+    populate some test data into our application to make development easier.
+
+-   **config.py**— We'll use this file to configure the larger pieces of our
+    application, like telling it where our database is, and other important
+    settings.
+
+-   **views.py**— View's are windows into our application.  User's access
+    these views by going to a webpage, which triggers the view into generating
+    the data required to build a webpage.
+
+-   **models.py**— The objects that give life to our application live here,
+    we will have a `User` model to represent users of our site, and a `Post`
+    and `Comment` model to represent their actions.  These models create
+    and interact with our database to make the magic happen.
+
+-   **__init__.py**— Think of this file as the index of our application, it's
+    a special filename that Python recognises to know that the `app` folder is
+    a package.  Think of it as the bridge that brings all the views and models
+    together to make the application unified.
+
+-   **static**— This folder holds our data that doesn't change, that could
+    be our CSS files, our Javascript scripts as well as images like logo's.
+
+-   **templates**— Our templates live in this directory.  Templates are used
+    by our views to render out complete webpages using the data the view grabs
+    from the data-models.
 
 
 

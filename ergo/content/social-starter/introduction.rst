@@ -329,10 +329,30 @@ defined them, we'll load some test data into it, and explore it to
 see if our expectations match reality.
 
 If you're new to SQLAlchemy, have a read of `my post showing how it can be
-used <{filename}../2015/01/sqlalchemy-cheatsheet.rst>`_
+used <{filename}../2015/01/sqlalchemy-cheatsheet.rst>`_ so you're not
+entirely at a loss as we go on.
 
+Lets first think about the general models we'll need and their relationships
+to each other
 
+-   **User**
+-   **Role**— Some users have special roles that grant them extra functionality.
+-   **Post**— The core content of the site.
+-   **Comment**
+-   **Message**— To represent the private messages passed between users
+-   **Favourite**— Store user's favourites.
+-   **Category**— The site will have several categories (Tech, Literature, News..)
+    that Post's can be assigned to.
+-   **Tag**— A post can have several tags that allows better searching and
+    discovery of related posts.
 
+The next step is to map the connections between them.  I find that easiest on
+paper, then translate that to code.  Below is my sketch of the relations
+using crows-foot notation (the splayed connections indicate a **M**any while
+the single connection indicates a **1** connections).
+
+..  image:: /images/starter/starter-erd.png
+    :alt: Starter ERD Sketch
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/

@@ -313,6 +313,8 @@ PostgreSQL version, you'll need to point it at the right place.
 
 With a bit of luck, everything will install in a straightforward manner, and we can
 proceed to actually beginning on constructing the building blocks of our application.
+
+
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/
 .. _Digg: http://www.digg.com/

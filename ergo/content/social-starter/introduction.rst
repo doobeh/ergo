@@ -321,47 +321,15 @@ The Data Model
 
 What is a data model? We've talked about how web applications have core foundations
 that are common, User's, Posts, Comments and more.  The data-model is the representation
-of those elements.  The data-model for a car might be something like:
-
-Car Data Model
-==============
-
--   **VIN Number**— a unique identifier for the car (never changes)
--   **License Plate**— the current 'name' of the car (can change when it's resold).
--   **Colour**
--   **Brand**
--   **Model**
--   **TopSpeed**
--   **LastServiceDate**— date when the car was last checked over my a mechanic
-
-Where things get interesting is the connection between those model elements.  For our car
-we had a `Brand` attribute.  Lots of cars share the same brand, so we would probably have
-a second model to represent that:
-
-Car Brand Data Model
-====================
-
--   **Brand**— The name of the brand
--   **Address**
--   **Phone**
--   **EstablishedDate**
-
-Car Model Data Model
-====================
-
--   **Model**— The name of the model
--   **YearReleased**
--   **RetailPrice**
-
-When we link those two models we start to give our application intelligence,
-we can start asking questions like:
-"Show me all cars made by Ford in the year 2000 that need haven't
-had a service in the last six months".
+of those elements and importantly how they relate to one another.
 
 A robust data-model makes everything else simple.  We're using SQLAlchemy
 to define our data-models and the relationship between them.  Once we've
 defined them, we'll load some test data into it, and explore it to
-see if it all makes sense.
+see if our expectations match reality.
+
+If you're new to SQLAlchemy, have a read of `my post showing how it can be
+used<{filename}/2015/01/sqlalchemy-cheatsheet.rst>`_
 
 
 

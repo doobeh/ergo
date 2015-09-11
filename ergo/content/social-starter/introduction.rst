@@ -333,6 +333,7 @@ Car Data Model
 -   **Model**
 -   **TopSpeed**
 -   **LastServiceDate**— date when the car was last checked over my a mechanic
+
 Where things get interesting is the connection between those model elements.  For our car
 we had a `Brand` attribute.  Lots of cars share the same brand, so we would probably have
 a second model to represent that:

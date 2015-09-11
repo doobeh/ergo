@@ -327,3 +327,5 @@ proceed to actually beginning on constructing the building blocks of our applica
 .. _Postgres.app: http://www.postgresapp.com/
 .. _Sublime: http://www.sublimetext.com/
 .. _Pycharm: https://www.jetbrains.com/pycharm/
+.. _Alembic: https://alembic.readthedocs.org/en/latest/
+.. _wtforms: http://wtforms.readthedocs.org/en/latest/

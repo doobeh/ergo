@@ -207,12 +207,16 @@ and `config.py` files.
 
 For now change back to the project root (`cd ..`).
 
+
+Virtual Environments
+--------------------
+
 We're going to want to play with our project in our own private sandbox,
 called a virtual environment.  Essentially this lets us create a
 little world for our project to live in that can't be hurt by future
-projects we create.
+(or past) projects we might have.
 
-Open up a terminal and navigate to your `starter` directory then run:
+Open up a terminal and navigate to your project root directory then run:
 
 .. code-block:: bash
 

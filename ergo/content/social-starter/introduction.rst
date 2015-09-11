@@ -329,7 +329,7 @@ defined them, we'll load some test data into it, and explore it to
 see if our expectations match reality.
 
 If you're new to SQLAlchemy, have a read of `my post showing how it can be
-used<{filename}../2015/01/sqlalchemy-cheatsheet.rst>`_
+used<{filename}2015/01/sqlalchemy-cheatsheet.rst>`_
 
 
 

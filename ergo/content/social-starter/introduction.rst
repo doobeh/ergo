@@ -139,8 +139,7 @@ Getting Started
 ===============
 
 Lets jump right in.  First we're going to need a place for our project to call home
-so lets launch a terminal and create a folder, jump into it, and then launch that
-folder as a project in sublime::
+so lets launch a terminal and create a folder and jump into it::
 
     mkdir starter
     cd starter
@@ -163,8 +162,6 @@ By the end of that you should end up with a project directory that looks like:
 
 ..  image:: /images/starter/starter-directories.png
     :alt: Starter Skeleton
-
-Lets go over what we just created:
 
 Lets walk through the files we have just created to give you an overview
 for their future purpose:
@@ -204,10 +201,44 @@ for their future purpose:
     by our views to render out complete webpages using the data the view grabs
     from the data-models.
 
+Throughout the project we'll be adding more files in as we need.  When I talk
+about adding a file to the project root, I mean adding them alongside the `requirements.txt`
+and `config.py` files.
+
+For now change back to the project root (`cd ..`).
+
+We're going to want to play with our project in our own private sandbox,
+called a virtual environment.  Essentially this lets us create a
+little world for our project to live in that can't be hurt by future
+projects we create.
+
+Open up a terminal and navigate to your `starter` directory then run:
+
+.. code-block:: bash
+
+    python -m venv world
+
+Python will create a folder called `world` that will have it's very own
+installation of Python.  We need to step into that world by activating
+it from our terminal/command line:
+
+.. code-block:: bash
+
+    . world/bin/activate
 
 
+For Windows users that means running the `activate.bat` file in
+the `world/Scripts` directory:
 
+.. code-block:: bash
 
+    world/scripts/activate.bat
+
+In either case, you'll notice your command prompt changes to indicate
+that it's now standing within your virtual world.  If you open up
+a new terminal window, that window won't be in the virtual world— so
+you'll just need to remember to activate the world each time you
+relaunch a terminal window.
 
 
 

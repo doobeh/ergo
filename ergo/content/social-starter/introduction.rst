@@ -359,23 +359,46 @@ users' are connect to themselves.  For each of these relationships we'll use
 a join table to enable them, then use the magic of SQLAlchemy to make the
 relationship seamless.
 
-Lets start by opening up `models.py` in our editor.
+Lets start by opening up `models.py` in our editor and defining our basic
+User and Role models.
 
 .. code-block:: python
 
-    from flask_ext.sqlalchemy import SQLAlchemy
+    roles_users = db.Table(
+        'roles_users',
+        db.Column('user_id', db.Integer(), db.ForeignKey('user.id'), index=True),
+        db.Column('role_id', db.Integer(), db.ForeignKey('role.id'), index=True)
+    )
 
-    db = SQLAlchemy()
 
-    class User(db.Model):
+    class User(db.Model, UserMixin):
+        __tablename__ = 'user'
         id = db.Column(db.Integer(), primary_key=True)
-        username = db.Column(db.String(), indexed=True, nullable=False)
+        username = db.Column(db.String(), index=True, nullable=False)
         password = db.Column(db.String(), nullable=False)
         email = db.Column(db.String(), nullable=False)
         active = db.Column(db.Boolean(), default=False, nullable=False)
+        status = db.Column(db.Integer())
+        status_changed = db.Column(db.DateTime())
+        confirmed_at = db.Column(db.DateTime())
+        roles = db.relationship('Role', secondary=roles_users,
+                                backref=db.backref('users', lazy='dynamic'))
 
         def __repr__(self):
             return self.username
+
+The first thing you'll notice is we're using a `UserMixin` object from Flask-Security.
+This is a helper object that has some of the methods and attributes required to
+allow all the features of Flask-Security to work.
+
+We then define our `roles_users` table which will be the register of our many-to-many
+joins between our `User` object and it's potentially many `Roles`.  Most of the
+attributes on `User` are self-explanatory.  We'll set `User.active = True` when
+they confirm their email address so we know to allow them to login to the site.
+For now I've allocated `User.status` as the place
+where I'll mark if a user is banned, or has cancelled their account.
+To give us some flexibility I've also added a `User.status_date` which we
+could use in tandem with the status to perhaps only temporarily ban a user.
 
 
 

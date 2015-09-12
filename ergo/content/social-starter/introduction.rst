@@ -699,7 +699,7 @@ You'll be taken to a python shell, that's already configured for our application
 Lets add `Role` called 'admin', then add a `User` called 'alice' and assign that
 Role to her:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> r = Role(name='admin')
     >>> u = User(username="alice", password="password", email="alice@example.com", active=True)
@@ -711,7 +711,12 @@ Role to her:
     # then tell the database to save the data:
     >>> db.session.commit()
 
+That's great for one user, but we want to populate our model in a quick way, so we'll
+use `Mixer` to help us.  While we're in the shell, lets add ten new users:
 
+.. code-block:: python
+
+    >>>
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/

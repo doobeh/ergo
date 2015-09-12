@@ -351,7 +351,7 @@ paper, then translate that to code.  Below is my sketch of the relations
 using crows-foot notation (the splayed connections indicate a **M**any while
 the single connection indicates a **1** connections).
 
-..  image:: /images/starter/starter-erd.png
+..  image:: /images/starter/starter-erd.jpg
     :alt: Starter ERD Sketch
 
 You'll see a few M2M relationships, including the self-referential one where

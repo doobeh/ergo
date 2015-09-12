@@ -158,6 +158,7 @@ it shortly::
     cd app
 
     touch __init__.py
+    touch core.py
     touch models.py
     touch views.py
 
@@ -198,8 +199,10 @@ for their future purpose:
 
 -   **__init__.py**— Think of this file as the index of our application, it's
     a special filename that Python recognises to know that the `app` folder is
-    a package.  Think of it as the bridge that brings all the views and models
-    together to make the application unified.
+    a package.
+
+-   **core.py**— In here we'll set up the actual Flask app, and bring all
+    the pieces together into one central place.
 
 -   **static**— This folder holds our data that doesn't change, that could
     be our CSS files, our Javascript scripts as well as images like logo's.
@@ -405,6 +408,150 @@ where I'll mark if a user is banned, or has cancelled their account.
 To give us some flexibility I've also added a `User.status_date` which we
 could use in tandem with the status to perhaps only temporarily ban a user.
 
+Lets carry on an add the rest of the models:
+
+.. code-block:: python
+
+    post_tags = db.Table(
+        'post_tags',
+        db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
+        db.Column('post_id', db.Integer, db.ForeignKey('post.id'))
+    )
+
+We know we've got another M2M join between our `Post` and `Tag` objects.  So
+we create another association table to act as the journal for these items.
+
+.. code-block:: python
+
+    class Tag(db.Model):
+        __tablename__ = 'tag'
+        id = db.Column(db.Integer(), primary_key=True)
+        name = db.Column(db.String(50), unique=True)
+
+        def __init__(self, name):
+            self.name = name
+
+        def __repr__(self):
+            return self.name
+
+    class Category(db.Model):
+        __tablename__ = 'category'
+        id = db.Column(db.Integer(), primary_key=True)
+        title = db.Column(db.String(), nullable=False, unique=True)
+        slug = db.Column(db.String(), nullable=False, unique=True)
+
+        def __repr__(self):
+            return self.title
+
+Our `Tag` object is straight-forward, we'll define the relationship between a `Tag`
+and a `Post` when we define the `Post` object.  The same is true of the `Category`
+object.
+
+.. code-block:: python
+
+    class Favourite(db.Model):
+        __tablename__ = 'favourite'
+        id = db.Column(db.Integer(), primary_key=True)
+        user_id = db.Column(db.Integer(), db.ForeignKey('user.id'), index=True)
+        comment_id = db.Column(db.Integer(), db.ForeignKey('comment.id'), index=True)
+        post_id = db.Column(db.Integer(), db.ForeignKey('post.id'), index=True)
+
+The `Favourite` object is a little more interesting.  I've decided to track
+favourites for both posts and comments in this single model. I was torn by this,
+usually I would have created two objects, `CommentFavourite` and `PostFavourite`.
+
+.. code-block:: python
+
+    class Post(db.Model):
+        __tablename__ = 'post'
+        id = db.Column(db.Integer(), primary_key=True)
+        title = db.Column(db.String(), nullable=False)
+        link = db.Column(db.String())
+        summary = db.Column(db.Text())
+        content = db.Column(db.Text())
+        dt = db.Column(db.DateTime(), nullable=False, index=True, default=datetime.now)
+        deleted = db.Column(db.Boolean())
+        favourites = db.relationship('Favourite', backref=db.backref('post'))
+
+        category_id = db.Column(db.Integer(), db.ForeignKey('post.id'))
+        category = db.relationship('Category', backref='posts')
+
+        author_id = db.Column(db.Integer(), db.ForeignKey('user.id'))
+        author = db.relationship('User', backref='posts')
+
+        tags = db.relationship('Tag', secondary=post_tags, backref=db.backref(
+            'posts', lazy='dynamic', order_by='Post.dt.desc()')
+        )
+
+        def get_tags_csv(self):
+            return ",".join(x.name for x in self.tags)
+
+        def set_tags_csv(self, value):
+            new = (x.lower() for x in value.strip(',; ').split(','))
+            self.tags = []
+            for tag in new:
+                existing_tag = Tag.query.filter_by(name=tag).first()
+                if existing_tag:
+                    self.tags.append(existing_tag)
+                else:
+                    t = Tag(tag.strip())
+                    self.tags.append(t)
+            db.session.commit()
+
+        tags_csv = property(get_tags_csv, set_tags_csv)
+
+        def __repr__(self):
+            return '{}: {}'.format(self.id, self.title)
+
+Okay, a lot going on here.  We've finally defined our relationships that interact with the `Post` model.
+The important aspect is the defined `backrefs` these allow the magic that truly makes SQLAlchemy shine by
+allowing us to jump between the relationships.  For example, lets say we wanted to find all the posts
+that were authored by `alice`:
+
+.. code-block:: python
+
+    user = User.query.filter_by(username='alice').first()
+    for post in user.posts:
+        print(post)
+
+Would give us a listing of each of Alice's posts.  We also have a `get_tags_csv` and `set_tags_csv` to
+act as a manager for our `Tag` creation.  The reason for this is that when we add a new post, we'd like
+the user to add these meta-data tags to the post, but if a tag *already* exists in our system, we want
+to use that existing one, not simply create a duplicate one.
+The `set_tags_csv` does that check for us, when we supply it a string of tags like `tech, music, love`
+it will break that string down into the three words, then check the database if they exist before
+assigning them to the `Post`.
+
+Finally lets get the `Comment` object created— we've already build the relationship for it in the `Post`
+object but because we quoted the class, it doesn't matter that we defined it later.
+
+.. code-block:: python
+
+    class Comment(db.Model):
+        __tablename__ = 'comment'
+
+        id = db.Column(db.Integer(), primary_key=True)
+        content = db.Column(db.Text())
+        dt = db.Column(db.DateTime(), index=True, default=datetime.now)
+
+        post_id = db.Column(db.Integer(), db.ForeignKey('post.id'), index=True)
+        post = db.relationship('Post', backref=db.backref('comments', lazy='dynamic', order_by='Comment.dt.asc()'))
+
+        user_id = db.Column(db.Integer(), db.ForeignKey('user.id'), index=True)
+        user = db.relationship('User', backref=db.backref('comments', lazy='dynamic'))
+
+        favourites = db.relationship('Favourite', backref=db.backref('comment'))
+
+        def __repr__(self):
+            return '<Comment {} by {} on {} @ {}>'.format(
+                self.id,
+                self.user,
+                self.post,
+                self.dt.strftime("%Y-%m-%d %H:%M")
+            )
+
+We've added a slightly more interesting `__repr__` for this object.  A `__repr__` is just the representation
+of the object when it's rendered as a string (e.g. when we `print` it or use it in our templates later).
 
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/

@@ -1,10 +1,10 @@
 :title: Introduction
 :date: 2015-08-12 18:00
-:series: starter
+:series: fountain
 :series_index: 1
 :tags: python, flask
-:category: starter
-:slug: starter-introduction
+:category: fountain
+:slug: fountain-introduction
 :authors: Anthony Plunkett
 :summary: Guide to Building a Social Web Application with Flask.
 :status: draft
@@ -144,8 +144,8 @@ the folder in a different location, navigate there first.
 
 .. code-block:: bash
 
-    mkdir starter
-    cd starter
+    mkdir fountain
+    cd fountain
 
 We're going to quickly build the skeleton of our project in this folder, and populate
 it shortly::
@@ -167,8 +167,8 @@ it shortly::
 
 By the end of that you should end up with a project directory that looks like:
 
-..  image:: /images/starter/starter-directories.png
-    :alt: Starter Skeleton
+..  image:: /images/fountain/fountain-directories.png
+    :alt: Fountain Skeleton
 
 Lets walk through the files we have just created to give you an overview
 for their future purpose:
@@ -351,8 +351,8 @@ paper, then translate that to code.  Below is my sketch of the relations
 using crows-foot notation (the splayed connections indicate a 'many' while
 the single connection indicates the 'one' side of the relation).
 
-..  image:: /images/starter/starter-erd.jpg
-    :alt: Starter ERD Sketch
+..  image:: /images/fountain/fountain-erd.jpg
+    :alt: Fountain ERD Sketch
 
 You'll see a few M2M relationships, including the self-referential one where
 users' are connect to themselves.  For each of these relationships we'll use
@@ -365,6 +365,7 @@ User and Role models.
 .. code-block:: python
 
     from flask_ext.sqlalchemy import SQLAlchemy
+    from flask_ext.security import UserMixin
 
     db = SQLAlchemy()
 

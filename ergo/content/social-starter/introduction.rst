@@ -470,7 +470,7 @@ object.
 The `Favourite` object is a little more interesting.  I've decided to track
 favourites for both posts and comments in this single model. I was torn by this,
 usually I would have created two objects, `CommentFavourite` and `PostFavourite`.
-
+s
 .. code-block:: python
 
     class Post(db.Model):
@@ -484,7 +484,7 @@ usually I would have created two objects, `CommentFavourite` and `PostFavourite`
         deleted = db.Column(db.Boolean())
         favourites = db.relationship('Favourite', backref=db.backref('post'))
 
-        category_id = db.Column(db.Integer(), db.ForeignKey('post.id'))
+        category_id = db.Column(db.Integer(), db.ForeignKey('category.id'))
         category = db.relationship('Category', backref='posts')
 
         author_id = db.Column(db.Integer(), db.ForeignKey('user.id'))
@@ -585,7 +585,7 @@ tables. Next lets open up  our `config.py` file and add the connection details f
 database so SQLAlchemy will know where to go for our data.  We're also going to set our
 secret key which Flask and it's extensions use to handle some of our encryption for us::
 
-    SQLALCHEMY_DATABASE_URI = 'postgres://127.0.0.1:5901/fountain'
+    SQLALCHEMY_DATABASE_URI = 'postgres://user@127.0.0.1:5432/fountain'
     SECRET_KEY = 'SUPER_SECRET_DO_NOT_SHARE'
 
 The Heart of our Application : core.py
@@ -633,6 +633,84 @@ out this view when get get to building the real interfaces for our project.
 
 The Management Interface : manage.py
 ====================================
+
+Next we're going to start building the technical interface to our application,
+this is how we're going to explore our models and do more maintenance tasks.
+Open up the `manage.py` file and enter the following:
+
+.. code-block:: python
+
+    from flask.ext.script import Manager, Shell
+    from app.models import User, Role, Post, Comment, Favourite, Tag, Category, db
+    from app.core import app
+
+    def _make_context():
+        return dict(
+            app=app, db=db,
+            User=User, Post=Post, Role=Role,
+            Comment=Comment, Favourite=Favourite,
+            Tag=Tag, Category=Category
+        )
+
+    manager = Manager(app)
+    manager.add_command('shell', Shell(make_context=_make_context))
+
+    @manager.command
+    def nuke():
+        db.drop_all()
+        db.create_all()
+        print('Database Created')
+
+    if __name__ == '__main__':
+        manager.run()
+
+We've initialized the `Manager` extension against our app, in the very same way
+we did with Flask-SQLAlchemy and Flask-Security and defined a couple of commands:
+
+-   **shell**— this allows us to quickly dive into our application in a state where
+    we can immediately start playing around.  The `_make_context` helps us out
+    here by letting us inject all those values into our shell context.  In short,
+    this means we don't have to `from app.models import ...` all the models
+    we want to play with every time we dive into the shell.
+-   **nuke**— This tells our SQLAlchemy database object to destroy, then create
+    all the tables in our application.
+
+Lets test out the management interface.  Launch a terminal, activate the virtual
+environment and go to the project root directory.  We're going to create our database
+and then launch into a shell.  First the database:
+
+.. code-block:: bash
+
+    python manage.py nuke
+
+And assuming you created your database successfully earlier and didn't type in the
+connection string incorrectly in `config.py` you should get a message back saying
+`Database Created`.
+
+Congratulations, we can now start to explore our data models.  Lets launch into the
+shell for our application:
+
+.. code-block:: bash
+
+    python manage.py shell
+
+You'll be taken to a python shell, that's already configured for our application.
+Lets add `Role` called 'admin', then add a `User` called 'alice' and assign that
+Role to her:
+
+.. code-block:: python
+
+    >>> r = Role(name='admin')
+    >>> u = User(username="alice", password="password", email="alice@example.com", active=True)
+    >>> u.roles.append(r)
+
+    #  Lets add the new user to the SQLAlchemy database session:
+    >>> db.session.add(u)
+
+    # then tell the database to save the data:
+    >>> db.session.commit()
+
+
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/

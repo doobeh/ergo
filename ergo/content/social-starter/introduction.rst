@@ -368,7 +368,7 @@ User and Role models.
 .. code-block:: python
 
     from flask_ext.sqlalchemy import SQLAlchemy
-    from flask_ext.security import UserMixin
+    from flask_ext.security import UserMixin, RoleMixin
 
     db = SQLAlchemy()
 
@@ -377,6 +377,17 @@ User and Role models.
         db.Column('user_id', db.Integer(), db.ForeignKey('user.id'), index=True),
         db.Column('role_id', db.Integer(), db.ForeignKey('role.id'), index=True)
     )
+
+    class Role(db.Model, RoleMixin):
+        __tablename__ = 'role'
+        id = db.Column(db.Integer(), primary_key=True)
+        name = db.Column(db.String(80), unique=True, index=True)
+
+        def __init__(self, name):
+            self.name = name
+
+        def __repr__(self):
+            return self.name
 
 
     class User(db.Model, UserMixin):
@@ -550,9 +561,78 @@ object but because we quoted the class, it doesn't matter that we defined it lat
                 self.dt.strftime("%Y-%m-%d %H:%M")
             )
 
-We've added a slightly more interesting `__repr__` for this object.  A `__repr__` is just the representation
-of the object when it's rendered as a string (e.g. when we `print` it or use it in our templates later).
+We've added a slightly more interesting `__repr__` for this object.  A `__repr__` is just the
+representation of the object when it's rendered as a string (e.g. when we `print` it when
+we're playing with it on out terminal or use it in our templates later).
 
+Building the Core Flask App
+---------------------------
+
+Let's now get a small working application working, so we can have a central place to shape
+our growing application.
+
+Create the Database
+===================
+
+First we're going to need a database to communicate with.  We've already installed PostgreSQL
+but we have yet to actually create a database for our application's data to call home. So launch
+the Postgres app, click the `open psql` button and enter the following command::
+
+    CREATE DATABASE fountain;
+
+This will create the blank database to work with.  SQLAlchemy will do the job of creating the
+tables. Next lets open up  our `config.py` file and add the connection details for our
+database so SQLAlchemy will know where to go for our data.  We're also going to set our
+secret key which Flask and it's extensions use to handle some of our encryption for us.
+
+    SQLALCHEMY_DATABASE_URI = 'postgres://127.0.0.1:5901/fountain'
+    SECRET_KEY = 'SUPER_SECRET_DO_NOT_SHARE'
+
+The Heart of our Application : core.py
+======================================
+
+Now lets flip over to our `core.py` and create our basic application by entering the following code:
+
+.. code-block:: python
+
+    from flask import Flask
+    from flask.ext.sqlalchemy import SQLAlchemy
+    from flask.ext.security import Security, SQLAlchemyUserDatastore
+    from app.models import User, Role
+
+    def create_app(config_filename):
+        factory_app = Flask(__name__)
+        factory_app.config.from_pyfile(config_filename)
+        return factory_app
+
+    app = create_app('../config.py')
+
+    #: Flask-SQLAlchemy extension instance
+    db = SQLAlchemy()
+    db.init_app(app)
+
+    # Setup Flask-Security
+    user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+    security = Security(app, user_datastore)
+
+    @app.route('/')
+    def home():
+        return 'Home'
+
+This is the core of our application.  We've defined a Flask application
+using a factory pattern— the reason for this is to decouple our application
+slightly which saves us running into trouble with circular imports.
+
+Then we've registered our SQLAlchemy and Security extensions against our
+application, specifying that the models we want the Security extension to
+use are the ones we created over in our `models.py` file.
+
+Finally we created a very stupid view, so when we run our application and
+access the home page, we'll just get "Home" displayed to us.  We'll throw
+out this view when get get to building the real interfaces for our project.
+
+The Management Interface : manage.py
+====================================
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/

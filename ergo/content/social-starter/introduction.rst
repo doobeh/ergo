@@ -348,8 +348,8 @@ to each other
 
 The next step is to map the connections between them.  I find that easiest on
 paper, then translate that to code.  Below is my sketch of the relations
-using crows-foot notation (the splayed connections indicate a **M**any while
-the single connection indicates a **1** connections).
+using crows-foot notation (the splayed connections indicate a 'many' while
+the single connection indicates the 'one' side of the relation).
 
 ..  image:: /images/starter/starter-erd.jpg
     :alt: Starter ERD Sketch
@@ -363,6 +363,10 @@ Lets start by opening up `models.py` in our editor and defining our basic
 User and Role models.
 
 .. code-block:: python
+
+    from flask_ext.sqlalchemy import SQLAlchemy
+
+    db = SQLAlchemy()
 
     roles_users = db.Table(
         'roles_users',

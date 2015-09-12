@@ -470,7 +470,7 @@ object.
 The `Favourite` object is a little more interesting.  I've decided to track
 favourites for both posts and comments in this single model. I was torn by this,
 usually I would have created two objects, `CommentFavourite` and `PostFavourite`.
-s
+
 .. code-block:: python
 
     class Post(db.Model):
@@ -513,6 +513,7 @@ s
 
         def __repr__(self):
             return '{}: {}'.format(self.id, self.title)
+
 
 Okay, a lot going on here.  We've finally defined our relationships that interact with the `Post` model.
 The important aspect is the defined `backrefs` these allow the magic that truly makes SQLAlchemy shine by

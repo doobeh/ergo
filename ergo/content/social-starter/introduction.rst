@@ -583,7 +583,7 @@ the Postgres app, click the `open psql` button and enter the following command::
 This will create the blank database to work with.  SQLAlchemy will do the job of creating the
 tables. Next lets open up  our `config.py` file and add the connection details for our
 database so SQLAlchemy will know where to go for our data.  We're also going to set our
-secret key which Flask and it's extensions use to handle some of our encryption for us.
+secret key which Flask and it's extensions use to handle some of our encryption for us::
 
     SQLALCHEMY_DATABASE_URI = 'postgres://127.0.0.1:5901/fountain'
     SECRET_KEY = 'SUPER_SECRET_DO_NOT_SHARE'

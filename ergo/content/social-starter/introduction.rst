@@ -705,18 +705,17 @@ Role to her:
     >>> u = User(username="alice", password="password", email="alice@example.com", active=True)
     >>> u.roles.append(r)
 
-    #  Lets add the new user to the SQLAlchemy database session:
+    Lets add the new user to the SQLAlchemy database session:
     >>> db.session.add(u)
 
     # then tell the database to save the data:
     >>> db.session.commit()
 
-That's great for one user, but we want to populate our model in a quick way, so we'll
-use `Mixer` to help us.  While we're in the shell, lets add ten new users:
+That's great for one user, but is going to get tiresome to add enough users, posts, categories,
+tags, comments. We can turn to the Mixer library to handle it all for us.  Lets open up
+`manage.py` again and add a new `populate` command:
 
-.. code-block:: python
 
-    >>>
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/

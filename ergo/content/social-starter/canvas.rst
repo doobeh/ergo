@@ -125,3 +125,6 @@ relaunch a terminal window.
 Next we'll create the skeletal structure of our application and install
 the libraries that will help us develop our application in a smooth
 manner.
+
+.. _Sublime: http://www.sublimetext.com/
+.. _Postgres.app: http://www.postgresapp.com/

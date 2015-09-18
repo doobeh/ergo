@@ -7,7 +7,7 @@
 :slug: fountain-introduction
 :authors: Anthony Plunkett
 :summary: Guide to Building a Social Web Application with Flask.
-:status: draft
+:status: published
 
 Introduction
 ------------

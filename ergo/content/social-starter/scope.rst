@@ -7,7 +7,7 @@
 :slug: fountain-project-scope
 :authors: Anthony Plunkett
 :summary: Guide to Building a Social Web Application with Flask - Project Scope
-:status: published
+:status: draft
 
 So.. What Shall We Build?
 -------------------------

@@ -652,3 +652,18 @@ Role to her:
 That's great for one user, but is going to get tiresome to add enough users, posts, categories,
 tags, comments. We can turn to the Mixer library to handle it all for us. Lets open up
 `manage.py` again and add a new `populate` command:
+
+.. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
+.. _MetaFilter: https://www.metafilter.com/
+.. _Digg: http://www.digg.com/
+.. _Reddit: http://www.reddit.com/
+.. _Quora: http://www.quora.com/
+.. _Stackoverflow: http://www.stackoverflow.com/
+.. _BuzzFeed: http://www.buzzfeed.com/
+.. _Instagram: http://www.instagram.com/
+.. _Slate: http://www.slate.com/
+.. _Postgres.app: http://www.postgresapp.com/
+.. _Sublime: http://www.sublimetext.com/
+.. _Pycharm: https://www.jetbrains.com/pycharm/
+.. _Alembic: https://alembic.readthedocs.org/en/latest/
+.. _wtforms: http://wtforms.readthedocs.org/en/latest/

@@ -107,7 +107,7 @@ hopefully reduce the instances of user's like Carol.
 Putting yourself into these types of stories can really help to solidify
 what the flow of the site is.  We've only done a few quick stories to
 illustrate the concept, but the more detailed you are with
-you projects, the better you can define the edges of our application.
+you projects, the better you can define the edges of your application.
 
 Now that we've got a rough shape to our application, we can start
 building it.  The next section will briefly go over how to get you

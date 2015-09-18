@@ -9,8 +9,6 @@
 :summary: Guide to Building a Social Web Application with Flask.
 :status: published
 
-Introduction
-------------
 
 If you step back at look at the crowd of social websites out there, they
 all tend to share similar foundations and concepts.

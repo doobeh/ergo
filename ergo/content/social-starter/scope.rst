@@ -1,5 +1,5 @@
-:title: The Project
-:date: 2015-08-12 18:00
+:title: The Project Scope
+:date: 2015-09-17 19:55
 :series: fountain
 :series_index: 2
 :tags: python, flask
@@ -7,7 +7,7 @@
 :slug: fountain-project-scope
 :authors: Anthony Plunkett
 :summary: Guide to Building a Social Web Application with Flask - Project Scope
-:status: draft
+:status: published
 
 So.. What Shall We Build?
 -------------------------
@@ -42,6 +42,11 @@ She clicks `Create Post` and enters the information for the article she wants
 to share, she chooses to allocate it to the `Tech` section and she also
 tags it `nuclear`, `breakthrough`.
 
+When she's complete, she submits the form and is taken to her brand-new first
+post on the site.  She's interested what other posts have been tagged with `nuclear`
+so she clicks on the tag attached to her post and it takes her to a page
+showing all the latest posts that have also been tagged `nuclear`.
+
 Carol the Spammer
 ~~~~~~~~~~~~~~~~~
 
@@ -64,27 +69,50 @@ a link to a opinion piece that he found relevant to the topic at hand.
 
 He also found the post so interesting that he's interested when Alice posts
 anything else new, so he clicks on Alice's name to bring up her profile,
-then chooses to follow her, so that later when she posts another article,
+then chooses to follow her— later when she posts another article,
 it'll show up on his recent follower activity.
 
 Diane the Administrator
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Diane signs into her administrative account and goes to her admin interface to
+Diane signs into her administrative account and views her admin interface to
 see the size and shape of the site.
 
-She notices a comment has been flagged by several users and clicks to view it.
+She notices on her status page that a comment has been
+flagged by several users and clicks to view it.
 It's clearly a spam link, by Carol, a new user. Diane decides that this does
-not bode well for Carol's future with the site, and deletes the comment and
+not bode well for Carol's future with the site, quickly deletes the comment and
 bans Carol from future activity.
 
+Diane read Alice's post while she was reviewing the comment, and really enjoyed
+it.  She clicks the favourite button and also sends Alice a direct message
+through the site saying 'Great first post! Welcome to the site!'.
 
-Setting the Boundaries
-----------------------
+
+Setting the Boundaries of our App
+---------------------------------
 
 In those four short stories, we've actually defined a lot of functionality
-in our site.
+for our site, and we've got a feel for how a user would actually use it.
+We now know that we need to have a mechanism to flag posts or comments
+for administrative attention, as well as an administrative interface that
+can report on those flags.
 
+We know that tags link posts together, and clicking on one will take us
+to similarly tagged posts.
+
+We've also defined that users need to confirm their email addresses to
+hopefully reduce the instances of user's like Carol.
+
+Putting yourself into these types of stories can really help to solidify
+what the flow of the site is.  We've only done a few quick stories to
+illustrate the concept, but the more detailed you are with
+you projects, the better you can define the edges of our application.
+
+Now that we've got a rough shape to our application, we can start
+building it.  The next section will briefly go over how to get you
+computer into the right configuration so we're all starting off
+from the same place.
 
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/

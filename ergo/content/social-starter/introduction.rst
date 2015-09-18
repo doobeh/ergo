@@ -99,8 +99,6 @@ In the coming section, we'll go over what we want to build in a little more
 detail, to define the scope of our project and give us something to work
 towards.
 
-Stay tuned.
-
 .. _Zen of Python: https://www.python.org/dev/peps/pep-0020/
 .. _MetaFilter: https://www.metafilter.com/
 .. _Digg: http://www.digg.com/
